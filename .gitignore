@@ -102,3 +102,4 @@ InitTestScene*.unity*
 # IDE's ignore
 .idea/
 .vs/
+.vsconfig
