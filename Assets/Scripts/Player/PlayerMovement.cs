@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
+        Debug.Log("K");
         if(context.performed && _controller.isGrounded)
         {
             _velocity.y = _jumpH;
@@ -35,10 +36,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        _velocity.y += _gravity*Time.deltaTime;
-        _controller.Move(_velocity * Time.deltaTime);
+        if (_controller.isGrounded && _velocity.y < 0)
+        {
+            Debug.Log("K1");
+            _velocity.y = -6;
+        }
         _dir = moveInput.y * transform.forward + moveInput.x * transform.right;
+        _velocity.y += _gravity * Time.deltaTime;
         _controller.Move(_dir * _speed * Time.deltaTime);
+        _controller.Move(_velocity * Time.deltaTime);
        
     }
 }
