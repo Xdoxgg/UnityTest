@@ -5,28 +5,28 @@ using UnityEngine;
 
 public class SampleObject : MonoBehaviour
 {
-    InteractiveObject obj;
-    Outline outline;
+    private InteractiveObject _obj;
+    private Outline _outline;
     private void Awake()
     {
-        outline = GetComponent<Outline>();
-        obj = GetComponent<InteractiveObject>();
+        _outline = GetComponent<Outline>();
+        _obj = GetComponent<InteractiveObject>();
 
-        outline.OutlineColor = Color.blue;
-        obj.ObjectAction = OnPeretask;
+        _outline.OutlineColor = Color.blue;
+        _obj.ObjectAction = OnPeretask;
         
     }
 
     private void OnPeretask()
     {
         Debug.Log("sdfsdf");
-        if (outline.OutlineColor == Color.blue)
+        if (_outline.OutlineColor == Color.blue)
         {
-            outline.OutlineColor = Color.red;
+            _outline.OutlineColor = Color.red;
         }
-        else if(outline.OutlineColor == Color.red)
+        else if(_outline.OutlineColor == Color.red)
         {
-            outline.OutlineColor = Color.blue;
+            _outline.OutlineColor = Color.blue;
         }
     }
 }
