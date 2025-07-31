@@ -1,4 +1,4 @@
-using Interactive.LocationInteractive;
+using Interactive;
 using UnityEngine;
 
 public class SampleGun : MonoBehaviour

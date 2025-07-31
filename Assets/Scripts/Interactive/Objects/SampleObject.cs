@@ -1,5 +1,4 @@
 using Interactive;
-using Interactive.LocationInteractive;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Interactive.LocationInteractive
+namespace Interactive
 {
     public class InteractiveObject : MonoBehaviour, IInteractive
     {
@@ -11,13 +11,20 @@ namespace Interactive.LocationInteractive
         private string _description;
         [SerializeField] 
         private GameObject _currentGameObject;
-
+        private bool _isInventoried;
+        
         public InteractiveObject(Action action, string description)
         {
             _description = description;
             _action = action;
         }
 
+        public bool IsInventoried
+        {
+            get => _isInventoried;
+            set => _isInventoried = value;
+        }
+        
         public GameObject CurrentGameObject
         {
             get => _currentGameObject;
